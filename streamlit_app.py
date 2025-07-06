@@ -36,6 +36,7 @@ def loadByName(name):
   for myname in names_ref.stream():
     currentName = myname
   return currentName
+
 st.sidebar.subheader("Buscar nombre")
 nameSearch = st.sidebar.text_input("nombre")
 btnFiltrar = st.sidebar.button("Buscar")
@@ -76,5 +77,4 @@ if btnActualizar:
 names_ref = list(db.collection(u'names').stream())
 names_dict = list(map(lambda x: x.to_dict(), names_ref))
 names_dataframe = pd.DataFrame(names_dict)
-st.subheader("Lista de nombres")
 st.dataframe(names_dataframe)
