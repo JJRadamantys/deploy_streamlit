@@ -4,8 +4,7 @@ from google.cloud import firestore
 from google.oauth2 import service_account
 
 import json
-#key_dic = json.loads(st.secrets["textkey"])
-key_dic = st.secrets["textkey"]
+key_dic = json.loads(st.secrets["textkey"])
 
 creds = service_account.Credentials.from_service_account_info(key_dic)
 db = firestore.Client(credentials=creds, project="names-project-demo.json")
